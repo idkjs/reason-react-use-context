@@ -1,11 +1,14 @@
 /* our user context object. Where this goes or is passed down we will have access to the users context, if logged in or not. */
 open Types;
-// define a type for our dispatch function. This taka a userAction and calls it.
+// define a type for our dispatch function. This taka a userAction from `Types.userAction` and calls it.
 type dispatch = userAction => unit;
 // `context value is a tuple of `user` type and `dispatch` type we just defined.
 type contextValue = (user, dispatch);
 
-// define our initial value of type context value which means its a tuple which takes a user and a dispatch function. As user we are passing Anonymouse from our Types.user. `dispatch` gets a userAction which is then called, here we pass `_` to tell the compiler to ignore this argument, the as the function call, we call `ignore()` which ignores the result of calling nothing. Note that the function, unit shape of the dispatch type is respected.
+// unnecessary but helps me to understand what happens below. This type is inferred by the compiler. You can comment it out to see what happens.
+type context = contextValue => React.Context.t(contextValue);
+
+// define our initial value of type contextValue which means its a tuple which takes a user and a dispatch function. As user we are passing Anonymouse from our Types.user. `dispatch` gets a userAction which is then called, here we pass `_` to tell the compiler to ignore this argument, the as the function call, we call `ignore()` which ignores the result of calling nothing. Note that the function, unit shape of the dispatch type is respected.
 
 /* This is has the effect of making no changes when creating the context. Clever.
  */

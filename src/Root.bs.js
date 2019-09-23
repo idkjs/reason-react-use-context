@@ -3,6 +3,7 @@
 
 var React = require("react");
 var Page$ReactHooksTemplate = require("./Page.bs.js");
+var Header$ReactHooksTemplate = require("./Header.bs.js");
 var UserProvider$ReactHooksTemplate = require("./UserProvider.bs.js");
 
 function reducer(param, action) {
@@ -18,7 +19,7 @@ function Root(Props) {
   return React.createElement(UserProvider$ReactHooksTemplate.make, UserProvider$ReactHooksTemplate.makeProps(/* tuple */[
                   match[0][/* user */0],
                   match[1]
-                ], React.createElement(Page$ReactHooksTemplate.make, { }), /* () */0));
+                ], React.createElement(React.Fragment, undefined, React.createElement(Header$ReactHooksTemplate.make, { }), React.createElement("main", undefined, React.createElement(Page$ReactHooksTemplate.make, { }))), /* () */0));
 }
 
 var make = Root;

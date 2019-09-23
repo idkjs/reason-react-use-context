@@ -9,7 +9,7 @@ function str(prim) {
   return prim;
 }
 
-function UserMenu(Props) {
+function UserMenuWithHook(Props) {
   var match = UserContext$ReactHooksTemplate.useUser(/* () */0);
   var dispatch = match[1];
   var user = match[0];
@@ -51,7 +51,7 @@ function UserMenu(Props) {
   }
 }
 
-var make = UserMenu;
+var make = UserMenuWithHook;
 
 exports.str = str;
 exports.make = make;

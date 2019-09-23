@@ -7,5 +7,6 @@ let make = () => {
       <a href="#" className="nav-link"> {React.string("Dashboard")} </a>
     </div>
     <div className="user-menu"> <UserMenu /> </div>
+    <div className="user-menu"> <UserMenuWithHook /> </div>
   </header>;
 };
