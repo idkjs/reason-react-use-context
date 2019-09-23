@@ -2,9 +2,16 @@
 'use strict';
 
 var React = require("react");
+var UserContext$ReactHooksTemplate = require("./UserContext.bs.js");
 
 function Page(Props) {
-  return React.createElement(React.Fragment, undefined, React.createElement("h1", undefined, "A page"));
+  var match = UserContext$ReactHooksTemplate.useUser(/* () */0);
+  var user = match[0];
+  return React.createElement(React.Fragment, undefined, React.createElement("h1", undefined, "A page"), user ? React.createElement("span", {
+                    className: "user-message"
+                  }, "Welcome, " + (user[0] + "!")) : React.createElement("span", {
+                    className: "user-message"
+                  }, "Sneaky, you are browsing anonymously!"));
 }
 
 var make = Page;
