@@ -3,12 +3,6 @@
 
 var React = require("react");
 
-var context = React.createContext(/* Anonymous */0);
-
-function useUser(param) {
-  return React.useContext(context);
-}
-
 function initValue_001(param) {
   return /* () */0;
 }
@@ -18,7 +12,13 @@ var initValue = /* tuple */[
   initValue_001
 ];
 
+var context = React.createContext(initValue);
+
+function useUser(param) {
+  return React.useContext(context);
+}
+
+exports.initValue = initValue;
 exports.context = context;
 exports.useUser = useUser;
-exports.initValue = initValue;
 /* context Not a pure module */

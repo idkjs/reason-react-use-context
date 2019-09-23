@@ -15,5 +15,5 @@ let reducer = (_, action) =>
 [@react.component]
 let make = () => {
   let (state, dispatch) = React.useReducer(reducer, {user: Anonymous});
-  <UserProvider value={state.user}> <Page /> </UserProvider>;
+  <UserProvider value=(state.user, dispatch)> <Page /> </UserProvider>;
 };

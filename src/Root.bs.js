@@ -15,7 +15,10 @@ function reducer(param, action) {
 
 function Root(Props) {
   var match = React.useReducer(reducer, /* record */[/* user : Anonymous */0]);
-  return React.createElement(UserProvider$ReactHooksTemplate.make, UserProvider$ReactHooksTemplate.makeProps(match[0][/* user */0], React.createElement(Page$ReactHooksTemplate.make, { }), /* () */0));
+  return React.createElement(UserProvider$ReactHooksTemplate.make, UserProvider$ReactHooksTemplate.makeProps(/* tuple */[
+                  match[0][/* user */0],
+                  match[1]
+                ], React.createElement(Page$ReactHooksTemplate.make, { }), /* () */0));
 }
 
 var make = Root;
