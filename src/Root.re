@@ -15,5 +15,14 @@ let reducer = (_, action) =>
 [@react.component]
 let make = () => {
   let (state, dispatch) = React.useReducer(reducer, {user: Anonymous});
+
+    React.useEffect1(
+      () => {
+        let userData = Auth.currentAuthenticatedUser;
+        Js.log2("userData", userData);
+        None;
+      },
+      [||] // This is the key as this effect will be independent of any change in props.
+    );
   <UserProvider value=(state.user, dispatch)> <> <Header /> <main> <Page /> </main> </> </UserProvider>;
 };

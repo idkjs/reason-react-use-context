@@ -2,6 +2,7 @@
 'use strict';
 
 var React = require("react");
+var Auth$ReactHooksTemplate = require("./aws/Auth.bs.js");
 var Page$ReactHooksTemplate = require("./Page.bs.js");
 var Header$ReactHooksTemplate = require("./Header.bs.js");
 var UserProvider$ReactHooksTemplate = require("./UserProvider.bs.js");
@@ -16,6 +17,10 @@ function reducer(param, action) {
 
 function Root(Props) {
   var match = React.useReducer(reducer, /* record */[/* user : Anonymous */0]);
+  React.useEffect((function () {
+          console.log("userData", Auth$ReactHooksTemplate.currentAuthenticatedUser);
+          return undefined;
+        }), /* array */[]);
   return React.createElement(UserProvider$ReactHooksTemplate.make, UserProvider$ReactHooksTemplate.makeProps(/* tuple */[
                   match[0][/* user */0],
                   match[1]

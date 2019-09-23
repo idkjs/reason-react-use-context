@@ -8,5 +8,6 @@ let make = () => {
     </div>
     <div className="user-menu"> <UserMenu /> </div>
     <div className="user-menu"> <UserMenuWithHook /> </div>
+    <div className="user-menu"> <UserMenuAws /> </div>
   </header>;
 };

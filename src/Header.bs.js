@@ -3,6 +3,7 @@
 
 var React = require("react");
 var UserMenu$ReactHooksTemplate = require("./UserMenu.bs.js");
+var UserMenuAws$ReactHooksTemplate = require("./UserMenuAws.bs.js");
 var UserMenuWithHook$ReactHooksTemplate = require("./UserMenuWithHook.bs.js");
 
 function Header(Props) {
@@ -21,7 +22,9 @@ function Header(Props) {
                   className: "user-menu"
                 }, React.createElement(UserMenu$ReactHooksTemplate.make, { })), React.createElement("div", {
                   className: "user-menu"
-                }, React.createElement(UserMenuWithHook$ReactHooksTemplate.make, { })));
+                }, React.createElement(UserMenuWithHook$ReactHooksTemplate.make, { })), React.createElement("div", {
+                  className: "user-menu"
+                }, React.createElement(UserMenuAws$ReactHooksTemplate.make, { })));
 }
 
 var make = Header;
